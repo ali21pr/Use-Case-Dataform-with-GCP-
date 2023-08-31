@@ -1,7 +1,7 @@
 # Use-Case-Dataform-with-GCP
 **Dataform-driven ELT : Modern Transformations on BigQuery GCP**
 
-**Etape 1 :**
+**Etape 1**
 
 **Transfert Automatique de Fichiers Locaux vers Google Cloud Storage**
 
@@ -34,7 +34,7 @@ Le script fonctionne en continu et surveille le répertoire local spécifié. Po
 
 
 
-**Etape2**
+**Etape 2**
 
 **Automatisation du Transfert de Fichiers de Google Cloud Storage à BigQuery**
 
@@ -69,7 +69,7 @@ Autorisations et clés API Google Cloud : configuration des autorisations approp
 La Cloud Function est déclenchée chaque fois qu'un fichier est ajouté au bucket GCS surveillé. Elle lit les données du fichier CSV, les charge dans une table BigQuery correspondante, et supprime ensuite le fichier du bucket GCS. Si une table du même nom existe déjà dans BigQuery, la fonction ajoute les données du nouveau fichier à cette table. Un log avec une sévérité de type "warning" est également créé dans Google Cloud Logging, notant le nom du fichier qui a été transféré à BigQuery.
 
 
-**Etape3**
+**Etape 3**
 
 **Amélioration de la Qualité des Données avec Dataform sur BigQuery**
 
@@ -109,7 +109,7 @@ Les opérations de qualité des données comprennent :
 Tous les résultats des opérations de qualité des données ont été stockés dans de nouvelles tables dans le dataset "dataform_staging" de BigQuery.
 
 
-**Etape4**
+**Etape 4**
 
 **Création de modèles de transformation de données avec SQLX**
 
@@ -136,7 +136,7 @@ Pour mener à bien cette étape, nous avons utilisé une combinaison de technolo
 Nos modèles SQLX sont configurés pour être exécutés dans Dataform. Chaque modèle est défini en utilisant SQLX et est configuré pour être une vue ou une table dans notre environnement de travail Dataform qui est ensuite chargee dans le dataset Dataform reporting pour la reporting et l’analyse.
 
 
-**Etape5**
+**Etape 5**
 
 **Description de la Visualisation des Données avec Looker**
 
@@ -177,7 +177,7 @@ Chaque visualisation est interactive, permettant aux utilisateurs de filtrer, de
 La combinaison de BigQuery, Dataform et Looker offre une solution complète - de l'ingestion et la transformation des données à la visualisation. Grâce à Looker, les données transformées et modélisées sont désormais accessibles à une variété d'utilisateurs, des analystes aux décideurs, leur permettant d'obtenir des insights clairs et actionnables à partir des données.
 
 
-**Etape6**
+**Etape 6**
 
 
 **La Prédiction du Risque dans le Marché Immobilier à l'aide de BigQuery ML et Jupyter Notebook**
@@ -217,3 +217,85 @@ Avec une prédiction précise du risque que l'HPI actuel soit inférieur à l'HP
 **Conclusion**
 
 En utilisant à la fois BigQuery ML et Jupyter Notebook pour analyser et prédire le risque associé aux mouvements de l'HPI, ce projet fournit des outils précieux pour anticiper les tendances du marché immobilier. Ces prédictions enrichissent la compréhension du marché et facilitent des décisions d'investissement plus éclairées.
+
+
+**Etape 7**
+
+**Automatisation des Requêtes SQLX dans Dataform à l'aide de Workflows et de Cloud Scheduler**
+
+**Introduction**
+
+Dans le contexte de l'analyse des données et de la modélisation, il est essentiel d'actualiser régulièrement les données et les résultats pour refléter les changements et les mises à jour. Pour ce faire, nous avons mis en place un processus automatisé pour exécuter les requêtes SQLX de Dataform, permettant ainsi une mise à jour constante des informations sans intervention manuelle.
+
+**Description du Processus**
+
+**Création d'un Workflow dans Dataform :**
+
+Un workflow a été conçu pour orchestrer l'exécution des requêtes SQLX dans Dataform.
+
+Les requêtes ont été définies comme des étapes séquentielles dans un fichier YAML, en tenant compte des dépendances entre elles. Cela garantit que les requêtes sont exécutées dans le bon ordre, en s'assurant que chaque étape reçoit les données nécessaires de l'étape précédente.
+
+**Intégration avec Cloud Scheduler :**
+
+Afin de déclencher le workflow de manière régulière et automatique, Google Cloud Scheduler a été utilisé.
+
+Cloud Scheduler a été configuré pour déclencher le workflow tous les jours à 10 heures du matin. Lorsque cette heure arrive, Cloud Scheduler envoie un signal pour démarrer le workflow, qui à son tour commence à exécuter les requêtes SQLX en suivant la séquence définie dans le fichier YAML.
+
+**Avantages de l'Automatisation**
+
+Actualité : Les données et les modèles sont constamment mis à jour, garantissant ainsi que les visualisations, les rapports et les analyses sont basés sur les informations les plus récentes.
+
+Efficacité : L'automatisation élimine le besoin d'exécuter manuellement les requêtes, économisant ainsi du temps et réduisant les erreurs humaines.
+
+Cohérence : En exécutant les requêtes à un moment spécifié chaque jour, on garantit une cohérence dans la collecte et l'analyse des données.
+
+**Conclusion**
+
+L'automatisation du processus de requête à l'aide de workflows Dataform et de Cloud Scheduler permet non seulement une gestion plus efficace des ressources, mais aussi une confiance accrue dans la précision et l'actualité des données. Ce système garantit que les parties prenantes ont toujours accès aux informations les plus pertinentes pour prendre des décisions éclairées.
+
+**Etape 8**
+
+**Automatisation du Modèle BigQuery ML**
+
+**Introduction**
+Cette documentation présente le processus d'automatisation du modèle conçu à l'aide de BigQuery ML. L'automatisation est essentielle pour s'assurer que le modèle est régulièrement mis à jour avec les dernières données, offrant ainsi des prédictions toujours actuelles.
+
+**Description du Processus**
+Afin de garantir une mise à jour automatique du modèle, une suite d'outils et de services Google Cloud a été mise en place pour orchestrer et exécuter cette tâche.
+
+Cloud Function:La première étape de ce processus consiste à héberger la requête SQL qui crée ou met à jour le modèle dans une Cloud Function. Cette fonction est spécifiquement conçue pour déclencher le processus de "building" du modèle dans BigQuery ML.
+
+Pub/Sub:La Cloud Function est déclenchée par la publication d'un message via Google Cloud Pub/Sub. Pub/Sub agit comme un intermédiaire qui transmet des messages permettant de coupler de manière décentralisée les applications qui produisent des événements à celles qui les traitent.
+
+Cloud Scheduler:Pour assurer que le processus s'exécute de manière régulière et cohérente, un Cloud Scheduler a été mis en place. Son rôle est d'envoyer un message Pub/Sub tous les jours à 10h10 du matin. Cette heure a été spécifiquement choisie pour s'assurer que toutes les requêtes Dataform ont terminé leur traitement, étant donné que leur scheduler s'exécute à 10h du matin. Cela garantit que le modèle dans BigQuery ML fonctionne toujours sur les données les plus récentes.
+
+**Conclusion**
+Grâce à cette automatisation, le modèle BigQuery ML est constamment à jour, permettant d'obtenir des prédictions basées sur les informations les plus récentes. Cette approche garantit non seulement la pertinence des prédictions, mais aussi l'efficacité du processus, en minimisant l'intervention manuelle et en maximisant la précision des prédictions.
+
+**Etape 9**
+
+**Intégration et Déploiement du Modèle de Machine Learning via Flask et App Engine**
+
+**Introduction**
+Cette section détaille l'approche utilisée pour intégrer le modèle de machine learning élaboré dans Jupyter, déployer une API Flask sur Google Cloud App Engine et enfin fournir une interface utilisateur pour la saisie des paramètres et l'affichage des prédictions.
+
+**Description du Processus**
+
+Chargement du Modèle sur Google Cloud Storage (GCS):Le modèle entraîné dans Jupyter a été exporté et chargé sur un bucket GCS. Stocker le modèle dans GCS permet un accès rapide et sécurisé, facilitant son intégration dans diverses applications et services.
+
+**API Flask:**
+
+Création: Une API a été développée avec Flask, un framework léger de développement web en Python. Cette API sert d'intermédiaire entre le modèle de machine learning et l'interface utilisateur, en recevant les données d'entrée, en effectuant la prédiction et en renvoyant le résultat.
+
+Intégration du Modèle: L'API charge le modèle depuis le bucket GCS, ce qui permet de faire des prédictions en temps réel.
+
+Déploiement sur Google Cloud App Engine: L'API Flask a été déployée sur Google Cloud App Engine, une plateforme entièrement gérée qui permet de construire et d'héberger des applications dans l'environnement cloud de Google. L'utilisation d'App Engine garantit la scalabilité, la sécurité et la haute disponibilité de l'API.
+
+**Interface Utilisateur:**
+
+Formulaire de Saisie: Une interface a été créée avec HTML, CSS et Bootstrap pour permettre à l'utilisateur de saisir les paramètres nécessaires à la prédiction. Cette interface est intuitive et adaptée aux non-techniciens.
+
+Affichage des Résultats: Une fois que l'utilisateur soumet les informations via le formulaire, l'API Flask traite les données, utilise le modèle pour faire une prédiction, et le résultat est ensuite affiché sur une page web dédiée, également conçue avec HTML, CSS et Bootstrap.
+
+**Conclusion**
+Ce processus complet assure une intégration transparente du modèle de machine learning dans une application web. Il fournit un moyen facile et convivial pour les utilisateurs d'obtenir des prédictions en temps réel sans se soucier de la complexité sous-jacente du modèle ou de l'infrastructure.
