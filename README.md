@@ -2,6 +2,8 @@
 **Dataform-driven ELT : Modern Transformations on BigQuery GCP**
 
 **Etape 1**
+![logo (1)](https://github.com/ali21pr/Use-Case-Dataform-with-GCP-/assets/116568003/e4b34d2f-1433-49b1-a6e7-10c928af4127)
+
 
 **Transfert Automatique de Fichiers Locaux vers Google Cloud Storage**
 
