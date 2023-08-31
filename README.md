@@ -150,6 +150,9 @@ Nos modèles SQLX sont configurés pour être exécutés dans Dataform. Chaque m
 
 **Description de la Visualisation des Données avec Looker**
 
+![visualisation looker](https://github.com/ali21pr/Use-Case-Dataform-with-GCP-/assets/116568003/bbab6af5-cd74-4b2f-b6f8-3405e3572af3)
+
+
 **Introduction**
 
 La visualisation des données est un élément crucial pour interpréter, comprendre et transmettre les informations contenues dans les vastes ensembles de données. Dans ce projet, nous utilisons Looker, un outil moderne de visualisation des données, pour transformer nos données transformées et de haute qualité de BigQuery en représentations visuelles significatives.
