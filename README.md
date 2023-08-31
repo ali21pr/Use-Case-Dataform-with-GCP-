@@ -1,6 +1,9 @@
 # Use-Case-Dataform-with-GCP
 **Dataform-driven ELT : Modern Transformations on BigQuery GCP**
 
+![dataform drawio (1)](https://github.com/ali21pr/Use-Case-Dataform-with-GCP-/assets/116568003/c034eedb-6eaa-4e03-aafc-4ef3762bf989)
+
+
 **Etape 1**
 
 
