@@ -101,8 +101,36 @@ Les opérations de qualité des données comprennent :
 
 **Élimination des colonnes avec de nombreuses valeurs manquantes** : Une autre requête a été créée pour prendre chaque table source et la soustraire de la table contenant les colonnes avec plus de 25 % de valeurs manquantes. Cela a donné une nouvelle table pour chaque table source, où chaque colonne a soit des valeurs complètes, soit moins de 25 % de valeurs manquantes.
 
+
 **Imputation des valeurs manquantes** : Pour chaque colonne restante dans les tables, une requête a été créée pour trouver la valeur la plus fréquente. Les valeurs manquantes ont ensuite été remplacées par cette valeur la plus fréquente.
 
 **Suppression des doublons** : Une dernière requête a été créée pour détecter et supprimer les doublons dans chaque table.
 
 Tous les résultats des opérations de qualité des données ont été stockés dans de nouvelles tables dans le dataset "dataform_staging" de BigQuery.
+
+
+**Etape4**
+
+**Création de modèles de transformation de données avec SQLX**
+
+**Introduction**
+
+Dans le cadre de notre pipeline de données, une étape cruciale consiste à effectuer diverses transformations de données pour préparer nos données pour l'analyse et le reporting. Nous utilisons pour cela un ensemble de modèles SQLX dans Dataform, une plateforme qui permet de structurer et d'organiser efficacement nos transformations de données.
+
+**Description**
+
+Dans cette étape, nous avons créé une série de modèles SQLX qui effectuent une variété de transformations sur nos données. Ces modèles comprennent des opérations telles que l'exécution de fonctions d'agrégat, la manipulation de cubes de données, et d'autres transformations pertinentes. Un exemple de modèle est la détermination de la valeur de l'indice des prix des logements par État pour une période donnée, ce qui est précieux pour analyser les tendances du marché immobilier.
+
+**Technologies utilisées**
+
+Pour mener à bien cette étape, nous avons utilisé une combinaison de technologies :
+
+**Git** : Nous utilisons Git pour la gestion des versions de notre code SQLX, ce qui nous permet de suivre l'évolution de nos transformations de données et de collaborer efficacement en équipe.
+
+**Dataform** : Dataform est notre plateforme de choix pour l'organisation et l'exécution de nos transformations de données. Il nous permet de structurer nos transformations en modèles et de les organiser dans un environnement de travail (workspace) cohérent.
+
+**SQLX** : SQLX, qui combine SQL et JavaScript, est le langage que nous utilisons pour définir nos modèles de transformation de données. Il nous offre la flexibilité d'écrire du code SQL robuste avec la capacité d'intégrer des éléments de logique de programmation grâce à JavaScript.
+
+**Configuration**
+
+Nos modèles SQLX sont configurés pour être exécutés dans Dataform. Chaque modèle est défini en utilisant SQLX et est configuré pour être une vue ou une table dans notre environnement de travail Dataform qui est ensuite chargee dans le dataset Dataform reporting pour la reporting et l’analyse.
