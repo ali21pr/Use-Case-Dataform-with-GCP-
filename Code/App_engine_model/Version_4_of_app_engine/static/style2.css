@@ -1,0 +1,33 @@
+body {
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(135deg, #8a71e6, #9b59b6);
+    text-align: center;
+}
+
+.container {
+    max-width: 600px; /* Réduite pour un meilleur aspect */
+    width: 90%;  /* Légèrement augmenté pour être plus réactif */
+    background: #fff;
+    padding: 20px 25px; /* Ajusté pour une meilleure esthétique */
+    border-radius: 5px;
+    max-height: 90vh; /* Réduite pour avoir une meilleure marge autour du conteneur */
+    overflow-y: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Ajoute une petite ombre pour un effet de profondeur */
+}
+
+p span {
+    font-weight: bold;
+    color: #8a71e6;  /* Utilise une couleur du gradient pour mettre en évidence la valeur de la prédiction */
+}
+.flex-label {
+    display: flex; /* Active le flexbox */
+    justify-content: space-between; /* Répartit les éléments sur toute la largeur: le texte à gauche, l'icône à droite */
+    align-items: center; /* Aligne les éléments verticalement au centre */
+    width: 100%; /* Utilise toute la largeur disponible */
+}

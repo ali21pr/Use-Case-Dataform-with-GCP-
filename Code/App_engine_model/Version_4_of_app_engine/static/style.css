@@ -1,0 +1,89 @@
+body {
+    /* Pour centrer le contenu */
+    flex-direction: column;
+    justify-content: center;
+
+    /* Pour définir le gradient */
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(135deg, #8a71e6, #9b59b6);
+    /* Pour s'assurer que tout le contenu du body est centré */
+    text-align: center;
+}
+
+.container {
+    max-width: 700px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    max-height: 100vh; /* Cela limite la hauteur du conteneur à la hauteur de la fenêtre de visualisation. */
+    overflow-y: auto;  /* Cela ajoute une barre de défilement verticale si nécessaire. */
+    }
+
+    .container h2 {
+        font-size: 25px;
+        font-weight: 500;
+        position: relative;
+    }
+    
+    .container h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 55px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    }
+
+    .form-control {
+        /* ajouter les styles pour les éléments input et select. */
+        /* Par exemple : */
+        padding: 10px 15px; /* Pour ajouter un peu d'espacement interne */
+        border-radius: 5px; /* Pour donner des coins arrondis */
+        border: 1px solid #ccc; /* Pour définir une bordure */
+        font-size: 16px; /* Pour définir la taille de la police */
+    }
+    
+    .form-control:focus {
+        /* Ce sélecteur cible les éléments input et select lorsqu'ils sont en focus (c'est-à-dire lorsqu'ils sont sélectionnés) */
+        border-color: #9b59b6; /* Change la couleur de la bordure lors de la mise au point */
+        outline: none; /* Supprime la mise en surbrillance par défaut du navigateur */
+        box-shadow: 0 0 5px rgba(155, 89, 182, 0.5); /* Ajoute une légère ombre portée pour un effet de mise au point */
+    }
+    .btn-lg.custom-btn {
+        width: 100%;
+        border-radius: 10px; /* Rend les coins du bouton légèrement arrondis */
+    }
+    @media (max-width: 768px) {
+        /* styles pour les écrans de moins de 768px */
+        body {
+            background-color: lightblue;
+        }
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    /*
+    .info-pourcentage_change {
+        margin-left: 50px; 
+    }
+    .info-Afford_Detrended {
+        margin-left: 50px; 
+    }
+    .info-Acceleration_Value {
+        margin-left: 50px; 
+    }
+    */
+    .flex-label {
+        display: flex; /* Active le flexbox */
+        justify-content: space-between; /* Répartit les éléments sur toute la largeur: le texte à gauche, l'icône à droite */
+        align-items: center; /* Aligne les éléments verticalement au centre */
+        width: 100%; /* Utilise toute la largeur disponible */
+    }
+    
