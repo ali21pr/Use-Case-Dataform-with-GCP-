@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="card p-4">
+      <h2>House Prediction</h2>
+      <form action="/predict" method="post">
+        <div class="row">
+          <!-- Première moitié des champs -->
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="msa" class="flex-label">Msa
+                <span data-toggle="tooltip" data-placement="right" title="5 digit Metropolitan Statistical Area code.">
+                  <i class="fas fa-info-circle info-msa"></i>
+                </span>
+              </label>
+              <select class="form-control" id="msa" name="msa" placeholder="Entrez le MSA ici" required>
+                  <option value="41860.0">41860</option>
+                  <!-- option value="valeur2">Valeur 2</option -->
+              </select>
+          </div>
+          <div class="form-group">
+            <label for="month" class="flex-label">Month
+              <span data-toggle="tooltip" data-placement="right" title="Month of timeseries.">
+                <i class="fas fa-info-circle info-month"></i>
+              </span>
+            </label>
+            <input class="form-control" type="date" id="month" name="month" placeholder="Entrez la date ici" required>
+        </div>
+        <div class="form-group">
+          <label for="hpi_value" class="flex-label">HPI Value
+              <span data-toggle="tooltip" data-placement="right" title="Nominal housing price index.">
+                  <i class="fas fa-info-circle info-hpi_value"></i>
+              </span>
+          </label>
+          <input class="form-control" type="number" id="hpi_value" name="hpi_value" step="any" placeholder="Entrez la valeur HPI ici" required>
+        </div>
+        <div class="form-group">
+          <label for="hpi_yoy_pct_chg" class="flex-label">Percentage Change
+              <span data-toggle="tooltip" data-placement="right" title="Year over year percent change in the nominal housing price index. Formally computed as [hpi_value(t)/hpi_value(t-12)]-1.">
+                  <i class="fas fa-info-circle info-pourcentage_change"></i>
+              </span>
+          </label>
+          <input class="form-control" type="number" id="HPI yoy pct chg" name="HPI yoy pct chg" step="any" placeholder="Entrez la valeur HPI yoy pct chg ici" required>
+        </div>
+        <div class="form-group">
+          <label for="HPI Distance" class="flex-label">HPI Distance 
+              <span data-toggle="tooltip" data-placement="right" title="The normalized distance of hpi_value from a long term linear trend. Units are in standard deviations from the mean.">
+                  <i class="fas fa-info-circle info-hpi_distance"></i>
+              </span>
+          </label>
+          <input class="form-control" type="number" id="HPI Distance" name="HPI Distance" step="any" placeholder="Entrez la valeur HPI Distance ici" required>
+        </div>
+        <div class="form-group">
+          <label for="HPI Returns" class="flex-label">HPI Returns 
+              <span data-toggle="tooltip" data-placement="right" title="Monthly returns in the nominal housing price index. Formally computed as hpi_value(t)/hpi_value(t-1).">
+                  <i class="fas fa-info-circle info-hpi_returns"></i>
+              </span>
+          </label>
+          <input class="form-control" type="number" id="HPI Returns" name="hpi Returns" step="any" placeholder="Entrez la valeur HPI Returns ici" required>
+        </div>
+      </div>
+          <!-- Deuxieme moitié des champs-->
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="HPI Real" class="flex-label">HPI Real 
+                  <span data-toggle="tooltip" data-placement="right" title="Real housing price index after adjusting nominal HPI for inflation as measured by the CPI.">
+                      <i class="fas fa-info-circle info-hpi_real"></i>
+                  </span>
+              </label>
+              <input class="form-control" type="number" id="HPI Real" name="HPI Real" step="any" placeholder="Entrez la valeur HPI Real ici" required>
+            </div>
+            <div class="form-group">
+              <label for="HPI Trend" class="flex-label">HPI Trend 
+                  <span data-toggle="tooltip" data-placement="right" title="Long term linear trend in hpi_value.">
+                      <i class="fas fa-info-circle info-hpi_trend"></i>
+                  </span>
+              </label>
+              <input class="form-control" type="number" id="HPI Trend " name="HPI Trend" step="any" placeholder="Entrez la valeur HPI Trend ici" required>
+            </div>
+            <div class="form-group">
+              <label for="Afford_Detrended" class="flex-label">Afford_Detrended 
+                  <span data-toggle="tooltip" data-placement="right" title="Normalized distance of afford_pmt from a long term linear trend. Units are in standard deviations from the mean.">
+                      <i class="fas fa-info-circle info-Afford_Detrended"></i>
+                  </span>
+              </label>
+              <input class="form-control" type="number" id="Afford_Detrended" name="Afford_Detrended" step="any" placeholder="Entrez la valeur Afford_Detrended ici" required>
+            </div>
+            <div class="form-group">
+              <label for="Afford PMT" class="flex-label">Afford PMT 
+                  <span data-toggle="tooltip" data-placement="right" title="Raw affordability value. Represents the percent of median household income required to make the median home payment on a 30 year fixed rate mortgage with 20% down.">
+                      <i class="fas fa-info-circle info-Afford_PMT"></i>
+                  </span>
+              </label>
+              <input class="form-control" type="number" id="Afford PMT" name="Afford PMT" step="any" placeholder="Entrez la valeur Afford PMT ici" required>
+            </div>
+            <div class="form-group">
+              <label for="Acceleration Value" class="flex-label">Acceleration Value 
+                  <span data-toggle="tooltip" data-placement="right" title="Monthly change in velocity_value.">
+                      <i class="fas fa-info-circle info-Acceleration_Value"></i>
+                  </span>
+              </label>
+              <input class="form-control" type="number" id="Acceleration Value" name="Acceleration Value" step="any" placeholder="Entrez la valeur Acceleration Value ici" required>
+            </div>
+            <div class="form-group">
+              <label for="Velocity Value" class="flex-label">Velocity Value 
+                  <span data-toggle="tooltip" data-placement="right" title="Smoothed year over year change in hpi_value.">
+                      <i class="fas fa-info-circle info-Velocity_Value"></i>
+                  </span>
+              </label>
+              <input class="form-control" type="number" id="Velocity Value" name="Velocity Value" step="any" placeholder="Entrez la valeur Velocity Value ici" required>
+            </div>
+          
+        </div>
+          </div>
+          </div>
+          <!-- Bouton Submit en dehors des deux colonnes -->
+          <div class="text-center mt-3"> <!-- text-center pour centrer le bouton -->
+            <input type="submit" value="Submit" class="btn btn-primary btn-lg custom-btn"> <!-- btn btn-primary pour un style de bouton bleu -->
+          </div>
+      </form> 
+    </div>
+    </div>
+    <script>
+      $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
+  </body>
+</html>
