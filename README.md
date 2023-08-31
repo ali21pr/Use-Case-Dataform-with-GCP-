@@ -281,6 +281,8 @@ L'automatisation du processus de requête à l'aide de workflows Dataform et de 
 
 **Automatisation du Modèle BigQuery ML**
 
+![modele_automation](https://github.com/ali21pr/Use-Case-Dataform-with-GCP-/assets/116568003/62fe0f0d-9510-42b1-b1c5-bb6ff8ad171f)
+
 **Introduction**
 Cette documentation présente le processus d'automatisation du modèle conçu à l'aide de BigQuery ML. L'automatisation est essentielle pour s'assurer que le modèle est régulièrement mis à jour avec les dernières données, offrant ainsi des prédictions toujours actuelles.
 
@@ -299,6 +301,8 @@ Grâce à cette automatisation, le modèle BigQuery ML est constamment à jour, 
 **Etape 9**
 
 **Intégration et Déploiement du Modèle de Machine Learning via Flask et App Engine**
+
+![modele_automation](https://kyr-sandbox-test-abo.ew.r.appspot.com/)
 
 **Introduction**
 Cette section détaille l'approche utilisée pour intégrer le modèle de machine learning élaboré dans Jupyter, déployer une API Flask sur Google Cloud App Engine et enfin fournir une interface utilisateur pour la saisie des paramètres et l'affichage des prédictions.
