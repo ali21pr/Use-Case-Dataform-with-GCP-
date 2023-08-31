@@ -175,3 +175,45 @@ Chaque visualisation est interactive, permettant aux utilisateurs de filtrer, de
 **Conclusion**
 
 La combinaison de BigQuery, Dataform et Looker offre une solution complète - de l'ingestion et la transformation des données à la visualisation. Grâce à Looker, les données transformées et modélisées sont désormais accessibles à une variété d'utilisateurs, des analystes aux décideurs, leur permettant d'obtenir des insights clairs et actionnables à partir des données.
+
+
+**Etape6**
+
+
+**La Prédiction du Risque dans le Marché Immobilier à l'aide de BigQuery ML et Jupyter Notebook**
+
+**Introduction**
+
+Comprendre et prédire les mouvements du marché immobilier est essentiel pour les investisseurs, les agences immobilières et les décideurs. Le "risk" que nous cherchons à prédire n'est pas simplement un chiffre arbitraire, mais une estimation de la probabilité que l'indice des prix des maisons (HPI - House Price Index) à un moment donné soit inférieur à cet indice 12 mois plus tard. Afin d'obtenir des prévisions précises de ce risque, nous avons employé deux méthodes de machine learning : une utilisant BigQuery ML avec le modèle BOOSTED_TREE_REGRESSOR et une autre s'appuyant sur Jupyter Notebook avec le GradientBoostingRegressor.
+
+**Description du Processus**
+
+L'HPI, ou House Price Index, est un indicateur clé de la santé d'un marché immobilier, reflétant les changements de valeur des propriétés résidentielles. Prédire la direction dans laquelle cet indice pourrait se déplacer peut avoir des implications significatives pour une multitude de parties prenantes.
+
+**BigQuery ML :**
+
+Grâce à la capacité de BigQuery à traiter et analyser de grands ensembles de données, un modèle BOOSTED_TREE_REGRESSOR a été entraîné pour prédire ce "risk" associé aux mouvements de l'HPI.
+
+Après l'entraînement, le modèle a été évalué pour déterminer sa précision et sa robustesse.
+
+**Jupyter Notebook :**
+
+En utilisant un environnement Jupyter, les données sur l'HPI ont été approfondies et le modèle GradientBoostingRegressor a été sélectionné pour sa capacité à traiter des problèmes de régression complexes.
+
+Une fois les données préparées, le modèle a été entraîné, validé et testé pour s'assurer de sa performance.
+
+**Résultats et Comparaison**
+
+Chaque méthode a apporté des insights uniques sur le risque de mouvements de l'HPI :
+
+BigQuery ML : Sa capacité à modéliser directement dans le cloud offre rapidité et efficacité, tout en s'intégrant parfaitement à l'écosystème GCP pour une visualisation et une interprétation aisées des résultats.
+
+Jupyter Notebook : Son environnement interactif permet une exploration approfondie des données, une personnalisation avancée du modèle et une explication claire de chaque étape.
+
+**Impact pour les Décideurs**
+
+Avec une prédiction précise du risque que l'HPI actuel soit inférieur à l'HPI dans 12 mois, les décideurs peuvent élaborer des stratégies d'investissement, évaluer la viabilité des projets immobiliers et anticiper les fluctuations du marché. Ces insights permettent une planification plus stratégique, une allocation de ressources optimisée et une meilleure prise de décision.
+
+**Conclusion**
+
+En utilisant à la fois BigQuery ML et Jupyter Notebook pour analyser et prédire le risque associé aux mouvements de l'HPI, ce projet fournit des outils précieux pour anticiper les tendances du marché immobilier. Ces prédictions enrichissent la compréhension du marché et facilitent des décisions d'investissement plus éclairées.
