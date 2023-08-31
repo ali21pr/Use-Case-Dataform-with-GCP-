@@ -195,6 +195,12 @@ La combinaison de BigQuery, Dataform et Looker offre une solution complète - de
 
 **La Prédiction du Risque dans le Marché Immobilier à l'aide de BigQuery ML et Jupyter Notebook**
 
+![metric_BQ_ML](https://github.com/ali21pr/Use-Case-Dataform-with-GCP-/assets/116568003/ebeba9c1-f298-431b-8ab2-d161c1767d07)
+
+![metric_gradient_boosting](https://github.com/ali21pr/Use-Case-Dataform-with-GCP-/assets/116568003/610c9159-40c8-47b6-a037-877e505f2193)
+
+![jupyter_results](https://github.com/ali21pr/Use-Case-Dataform-with-GCP-/assets/116568003/f42218aa-36e3-43e6-a837-d39cca927476)
+
 **Introduction**
 
 Comprendre et prédire les mouvements du marché immobilier est essentiel pour les investisseurs, les agences immobilières et les décideurs. Le "risk" que nous cherchons à prédire n'est pas simplement un chiffre arbitraire, mais une estimation de la probabilité que l'indice des prix des maisons (HPI - House Price Index) à un moment donné soit inférieur à cet indice 12 mois plus tard. Afin d'obtenir des prévisions précises de ce risque, nous avons employé deux méthodes de machine learning : une utilisant BigQuery ML avec le modèle BOOSTED_TREE_REGRESSOR et une autre s'appuyant sur Jupyter Notebook avec le GradientBoostingRegressor.
