@@ -302,7 +302,8 @@ Grâce à cette automatisation, le modèle BigQuery ML est constamment à jour, 
 
 **Intégration et Déploiement du Modèle de Machine Learning via Flask et App Engine**
 
-![modele_automation](https://kyr-sandbox-test-abo.ew.r.appspot.com/)
+![API Flask](https://github.com/ali21pr/Use-Case-Dataform-with-GCP-/assets/116568003/478ec6bc-d5b1-4bf6-9cbf-2fff3d4dab36)
+
 
 **Introduction**
 Cette section détaille l'approche utilisée pour intégrer le modèle de machine learning élaboré dans Jupyter, déployer une API Flask sur Google Cloud App Engine et enfin fournir une interface utilisateur pour la saisie des paramètres et l'affichage des prédictions.
