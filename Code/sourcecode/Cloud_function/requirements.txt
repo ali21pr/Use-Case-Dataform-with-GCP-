@@ -1,0 +1,8 @@
+google-cloud-storage
+google-cloud-bigquery
+google-cloud-logging
+gcsfs
+fsspec
+pandas
+pandas-gbq
+colorlog
