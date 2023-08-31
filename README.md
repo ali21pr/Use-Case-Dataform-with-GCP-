@@ -81,6 +81,8 @@ La Cloud Function est déclenchée chaque fois qu'un fichier est ajouté au buck
 
 **Amélioration de la Qualité des Données avec Dataform sur BigQuery**
 
+![Data-Quality drawio](https://github.com/ali21pr/Use-Case-Dataform-with-GCP-/assets/116568003/948e4b12-15a2-4d5b-8709-23fe2ac050b7)
+
 **Introduction**
 
 Ce document décrit le processus mis en œuvre pour améliorer la qualité des données stockées dans Google BigQuery à l'aide de Dataform, un outil qui permet d'effectuer des opérations ELT (Extract, Load, Transform).
