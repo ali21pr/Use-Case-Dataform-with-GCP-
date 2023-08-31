@@ -302,7 +302,8 @@ Grâce à cette automatisation, le modèle BigQuery ML est constamment à jour, 
 
 **Intégration et Déploiement du Modèle de Machine Learning via Flask et App Engine**
 
-![API Flask](https://github.com/ali21pr/Use-Case-Dataform-with-GCP-/assets/116568003/478ec6bc-d5b1-4bf6-9cbf-2fff3d4dab36)
+
+![API Flask](https://github.com/ali21pr/Use-Case-Dataform-with-GCP-/assets/116568003/d958f966-76df-493a-98f6-4ab353fd8bed)
 
 
 **Introduction**
