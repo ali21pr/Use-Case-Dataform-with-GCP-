@@ -242,6 +242,11 @@ En utilisant à la fois BigQuery ML et Jupyter Notebook pour analyser et prédir
 
 **Automatisation des Requêtes SQLX dans Dataform à l'aide de Workflows et de Cloud Scheduler**
 
+
+![automatisation_des_requetes drawio](https://github.com/ali21pr/Use-Case-Dataform-with-GCP-/assets/116568003/bad9684d-8cd7-41e0-b65e-65899d999ace)
+
+
+
 **Introduction**
 
 Dans le contexte de l'analyse des données et de la modélisation, il est essentiel d'actualiser régulièrement les données et les résultats pour refléter les changements et les mises à jour. Pour ce faire, nous avons mis en place un processus automatisé pour exécuter les requêtes SQLX de Dataform, permettant ainsi une mise à jour constante des informations sans intervention manuelle.
