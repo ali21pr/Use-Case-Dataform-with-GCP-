@@ -327,5 +327,7 @@ Formulaire de Saisie: Une interface a été créée avec HTML, CSS et Bootstrap 
 
 Affichage des Résultats: Une fois que l'utilisateur soumet les informations via le formulaire, l'API Flask traite les données, utilise le modèle pour faire une prédiction, et le résultat est ensuite affiché sur une page web dédiée, également conçue avec HTML, CSS et Bootstrap.
 
+[Interface Utilisateur](https://kyr-sandbox-test-abo.ew.r.appspot.com/)
+
 **Conclusion**
 Ce processus complet assure une intégration transparente du modèle de machine learning dans une application web. Il fournit un moyen facile et convivial pour les utilisateurs d'obtenir des prédictions en temps réel sans se soucier de la complexité sous-jacente du modèle ou de l'infrastructure.
