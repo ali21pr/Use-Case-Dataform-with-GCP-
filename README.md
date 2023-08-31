@@ -9,6 +9,10 @@
 
 **Transfert Automatique de Fichiers Locaux vers Google Cloud Storage**
 
+
+![integration_data](https://github.com/ali21pr/Use-Case-Dataform-with-GCP-/assets/116568003/81cddfaf-cf4d-4487-806b-55e4d9e6fb21)
+
+
 **Introduction**
 
 Ce document décrit la procédure pour mettre en place un système automatisé qui transfère les fichiers d'un répertoire local vers Google Cloud Storage (GCS) en utilisant un script Python.
