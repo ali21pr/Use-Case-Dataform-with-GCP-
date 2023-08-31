@@ -1,0 +1,7 @@
+Flask
+joblib
+pandas
+google-cloud-storage
+gunicorn
+google-cloud-logging
+scikit-learn==1.1.3 
