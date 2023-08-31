@@ -134,3 +134,44 @@ Pour mener à bien cette étape, nous avons utilisé une combinaison de technolo
 **Configuration**
 
 Nos modèles SQLX sont configurés pour être exécutés dans Dataform. Chaque modèle est défini en utilisant SQLX et est configuré pour être une vue ou une table dans notre environnement de travail Dataform qui est ensuite chargee dans le dataset Dataform reporting pour la reporting et l’analyse.
+
+
+**Etape5**
+
+**Description de la Visualisation des Données avec Looker**
+
+**Introduction**
+
+La visualisation des données est un élément crucial pour interpréter, comprendre et transmettre les informations contenues dans les vastes ensembles de données. Dans ce projet, nous utilisons Looker, un outil moderne de visualisation des données, pour transformer nos données transformées et de haute qualité de BigQuery en représentations visuelles significatives.
+
+**Description du Processus**
+
+Après la phase de qualité des données et la modélisation dans BigQuery via Dataform, les données sont finalement prêtes pour la visualisation. Les tables contenues dans le dataset "reporting" ont été liées à Looker pour construire diverses vues.
+
+Looker a la capacité de créer une gamme de visualisations, allant des simples graphiques à barres ou à courbes, aux diagrammes circulaires, en passant par les tableaux détaillés. Chaque visualisation est conçue pour répondre à des questions spécifiques et offrir des insights pertinents selon les besoins du projet.
+
+**Structure du Projet Looker**
+
+Le projet Looker est organisé autour d'une page d'accueil principale, qui sert de portail d'accès à toutes les visualisations. De là, les utilisateurs peuvent naviguer vers diverses pages, chacune se concentrant sur un aspect spécifique des données :
+
+**Page d'accueil** : Une vue d'ensemble de tous les ensembles de données et un point d'entrée pour explorer les visualisations plus détaillées.
+
+**Visualisations par Modèle** : Pour chaque modèle de données créé dans BigQuery, une page correspondante a été conçue dans Looker. Ces pages proposent différentes formes de visualisations pour chaque ensemble de données, permettant une exploration approfondie.
+
+**Types de Visualisations**
+
+Chaque page de modèle dans Looker propose une variété de visualisations :
+
+Graphiques à barres : Idéal pour comparer la taille de plusieurs éléments.
+
+Graphiques à courbes : Utilisé pour visualiser les tendances au fil du temps.
+
+Diagrammes circulaires : Pour représenter des proportions.
+
+Tableaux : Présentent des données détaillées en format tabulaire.
+
+Chaque visualisation est interactive, permettant aux utilisateurs de filtrer, de zoomer ou de cliquer pour obtenir plus de détails.
+
+**Conclusion**
+
+La combinaison de BigQuery, Dataform et Looker offre une solution complète - de l'ingestion et la transformation des données à la visualisation. Grâce à Looker, les données transformées et modélisées sont désormais accessibles à une variété d'utilisateurs, des analystes aux décideurs, leur permettant d'obtenir des insights clairs et actionnables à partir des données.
